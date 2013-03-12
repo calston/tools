@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Because "SEO" people suck.
+
 import csv, sys
 
 blocks = {}
@@ -36,6 +38,6 @@ for k, v in blocks.items():
 
     for old, new in v:
         print "    if ($args ~* \"/?%s\") {" % old
-        print "        rewrite ^ %s? permanent;" % new
+        print "        rewrite ^ /%s? permanent;" % new
         print "    }"
     print "}"
